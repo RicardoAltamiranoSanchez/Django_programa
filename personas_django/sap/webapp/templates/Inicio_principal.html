@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<htm>
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido</title>
+</head>
+<body>
+<h1> Proyecto de Ingenieria de Software</h1>
+</body>
+
+    <div>
+        <h4>Numero de personas en la base de datos {{no_personas}}</h4>
+    </div>
+    <di>
+       <h2>Integrantes del equipo</h2>
+    </di>
+        <di> <a href="nueva_persona">Agregar Persona</a> </di>
+    <div><!--sirve para poner texto en la pagina -->
+     <!--metodo uno     <ul>esto es para una cuando vallas a poner una lista el ul-->
+         <!--  metodo uno   no lo pongo completo por hay error de falta  for personas in persona  se utiliza cuando quieres poner varios registros o poner-->
+             <table border="1"><!--convertimos nuestra informacion en una tabla- se utiliza el borde para mejorarlo-->
+                 <thead> <!-- es para agregar los cabeceros de la tabla-->
+                 <tr><!--esto es un renglon-->
+                     <th> Id</th><!--esto es una columna de cabecero-->
+                     <th>Nombre</th>
+                     <th>Puesto</th>
+                     <ht></ht><!--Creamos nuevas celdas para los links-->
+                     <ht></ht>
+                     <ht></ht>
+
+
+                 </tr>
+
+                 </thead>
+                 <thebody><!--ES el cuerpo de la tabla es cuerpo de la tabla es que tiene que repetir en cuantos registros tengamos-->
+                      {% for personas in persona %}<!--se utiliza cuando quieres poner varios registros o poner-->
+                     <tr><!--definimos las columnas se debe crear un nuevo registro html por cada tipo de objeto persona que tengamos en la list-->
+                            <td>{{personas.id}}</td> <!--agregamos las columnas de nuestro registros-->
+                            <td> {{personas.nombre}} {{personas.apellido}}-></td>
+                            <td> {{personas.email}}</td>
+                            <td> <a href="Informacion_Persona/{{personas.id}}">Mas  </a><!--el a y herf es par ponde una url para ver que te diriga a otra  pagina--></td>
+                            <td> <a href="Editar_persona/{{personas.id}}">Editar </a></td><!--igual se ode el id para editar-->
+                            <td> <a href="Eliminar_persona/{{personas.id}}">Eliminar </a></td><!--igual se ode el id para editar-->
+
+
+
+
+
+                     </tr>
+                        {% endfor %}
+                 </thebody>
+
+             </table>
+                  <!--metodo uno <li> el li es para una lista  que se repita el mismo codigo como el de persona--->
+
+
+
+
+
+                    <!--metodo uno       </li>-->
+
+         <!--metodo uno        </ul>-->
+
+    </div>
+    <div><a href="Inicio_domicilio/">Ir Tienda virtual demo 1.0 </a></div>
+</htm>

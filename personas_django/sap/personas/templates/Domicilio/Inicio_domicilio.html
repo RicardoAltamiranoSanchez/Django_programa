@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<htm>
+<head>
+    <meta charset="UTF-8">
+    <title>Bienvenido</title>
+</head>
+<body>
+<h1> Proyecto de Ingenieria de Software</h1>
+</body>
+
+    <div>
+        <h4>Numero de domicilios registrados {{no_domicilios}}</h4>
+    </div>
+    <di>
+       <h2>Domicilios</h2>
+    </di>
+        <di> <a href="nueva_persona">Agregar Nuevo Domicilio</a> </di>
+    <div><!--sirve para poner texto en la pagina -->
+     <!--metodo uno     <ul>esto es para una cuando vallas a poner una lista el ul-->
+         <!--  metodo uno   no lo pongo completo por hay error de falta  for personas in persona  se utiliza cuando quieres poner varios registros o poner-->
+             <table border="1"><!--convertimos nuestra informacion en una tabla- se utiliza el borde para mejorarlo-->
+                 <thead> <!-- es para agregar los cabeceros de la tabla-->
+                 <tr><!--esto es un renglon-->
+                     <ht>Id</ht>
+                     <th> Calle</th><!--esto es una columna de cabecero-->
+                     <th>Nmuero</th>
+                     <th>Pais</th>
+                     <ht></ht><!--Creamos nuevas celdas para los links-->
+                     <ht></ht>
+                     <ht></ht>
+
+
+                 </tr>
+
+                 </thead>
+                 <thebody><!--ES el cuerpo de la tabla es cuerpo de la tabla es que tiene que repetir en cuantos registros tengamos-->
+                      {% for domicilio in domicilio %}<!--se utiliza cuando quieres poner varios registros o poner-->
+                     <tr><!--definimos las columnas se debe crear un nuevo registro html por cada tipo de objeto persona que tengamos en la list-->
+                            <td>{{domicilio.id}}</td>
+                            <td>{{domicilio.calle}}</td> <!--agregamos las columnas de nuestro registros-->
+                            <td> {{domicilio.no_numero}}</td>
+                            <td> {{domicilio.pais}}</td>
+                            <td><a href="Domicilio_mas/">Mas</a> </td>
+                            <td> <a href="Domicilio_editar/">Editar</a> </td>
+                            <td> <a href="Domicilio_eliminar/">Eliminar</a> </td>
+                     </tr>
+                        {% endfor %}
+                 </thebody>
+
+             </table>
+                  <!--metodo uno <li> el li es para una lista  que se repita el mismo codigo como el de persona--->
+
+
+
+
+
+                    <!--metodo uno       </li>-->
+
+         <!--metodo uno        </ul>-->
+
+    </div>
+    <div><a href="{% url 'inicio'%}">Regresar al inicio</a></div>
+
+</htm>

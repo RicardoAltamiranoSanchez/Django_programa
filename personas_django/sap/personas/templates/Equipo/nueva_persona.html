@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>NuevaPersona</title>
+</head>
+<body>
+<h1> Agregar Persona</h1>
+ <form method="post"><!--es es un formulario form se hace un formulario automaatioc se debe poner post en minusculas
+ para no halla errores al momento de pedir la informacion en la funcion-->
+    <table>
+        {{formapersona}}
+
+    </table>
+     <button type="submit">Enviar ala base de datos</button><!--creamos un boton para poder enviar la informacio-->
+    {%csrf_token%}
+ </form>
+</body>
+</html>
